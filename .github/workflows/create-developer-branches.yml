@@ -1,0 +1,54 @@
+name: Create Developer Branches
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-branches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create Kamil branch
+        run: |
+          git fetch origin
+          if git ls-remote --exit-code --heads origin Kamil; then
+            echo "Branch 'Kamil' already exists – skipping."
+          else
+            git checkout -b Kamil
+            git push origin Kamil
+            echo "Branch 'Kamil' created."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Jakub branch
+        run: |
+          git checkout main
+          if git ls-remote --exit-code --heads origin Jakub; then
+            echo "Branch 'Jakub' already exists – skipping."
+          else
+            git checkout -b Jakub
+            git push origin Jakub
+            echo "Branch 'Jakub' created."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Mykola branch
+        run: |
+          git checkout main
+          if git ls-remote --exit-code --heads origin Mykola; then
+            echo "Branch 'Mykola' already exists – skipping."
+          else
+            git checkout -b Mykola
+            git push origin Mykola
+            echo "Branch 'Mykola' created."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
