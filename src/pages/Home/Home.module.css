@@ -1,21 +1,109 @@
-.container {
+.page {
+  background-color: #184E77;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #D9ED92;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.header {
+  height: 64px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1E6091;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #52B69A;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  gap: 1rem;
-  padding: 2rem;
-  text-align: center;
+  font-size: 14px;
+  color: #184E77;
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #213547;
+.nav {
+  display: flex;
+  gap: 8px;
 }
 
-.subtitle {
-  font-size: 1.25rem;
-  color: #4a5568;
+.nav button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid #34A0A4;
+  background-color: #1E6091;
+  color: #D9ED92;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background-color: #1E6091;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.3);
+  color: #D9ED92;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.topRow .card {
+  height: 240px;
+}
+
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.bottomRow .card {
+  height: 440px;
+}
+
+.footer {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addButton {
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  background-color: #52B69A;
+  color: #184E77;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 32px;
 }
