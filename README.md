@@ -1,7 +1,5 @@
 # TPF
 
-A collaborative frontend project built with **React** and **JavaScript** (Vite).
-
 ## Team
 
 | Developer | Branch  |
@@ -16,22 +14,6 @@ A collaborative frontend project built with **React** and **JavaScript** (Vite).
 
 - [Node.js](https://nodejs.org/) v18 or higher
 - npm v9 or higher
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Progyption/TPF.git
-cd TPF
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Available Scripts
 
@@ -65,18 +47,6 @@ TPF/
 ├── vite.config.js      # Vite configuration
 └── package.json
 ```
-
-## Development Workflow
-
-1. **Checkout your branch** before starting work:
-   ```bash
-   git checkout Kamil   # or Jakub / Mykola
-   ```
-2. Pull the latest changes from `main` regularly:
-   ```bash
-   git pull origin main
-   ```
-3. Open a **Pull Request** from your branch into `main` when a feature is ready for review.
 
 ## Conventions
 
