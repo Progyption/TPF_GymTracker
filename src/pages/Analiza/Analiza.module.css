@@ -1,0 +1,302 @@
+/* src/pages/Analiza/Analiza.module.css */
+.scrollContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    padding-bottom: 90px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollContent::-webkit-scrollbar {
+    display: none;
+}
+
+.headerRow {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.mainTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 4px;
+}
+
+.mainSubtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.chartCard {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.chartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.cardSubLabel {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.chartValue {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.barChart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 140px;
+    padding-top: 10px;
+}
+
+.chartColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.barTrack {
+    height: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.barFill {
+    width: 24px;
+    background-color: #1e293b;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    transition: height 0.3s ease;
+}
+
+.barHighlight {
+    background-color: var(--color-accent);
+    box-shadow: 0 0 16px rgba(184, 242, 63, 0.25);
+}
+
+.barLabel {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.miniCard {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.miniValue {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 12px;
+}
+
+.miniUnit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.progressTrack {
+    height: 4px;
+    background-color: #0f172a;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progressFillBlue {
+    height: 100%;
+    background-color: #38bdf8;
+}
+
+.progressFillAccent {
+    height: 100%;
+    background-color: var(--color-accent);
+}
+
+.miniFooterBlue {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.miniFooterAccent {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.section {
+    margin-bottom: 24px;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.insightsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.insightCard {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.insightLeft {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.iconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconBoxGreen {
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.iconBoxRed {
+    background-color: rgba(248, 113, 113, 0.1);
+}
+
+.insightTagGreen {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #4ade80;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.insightTagRed {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #f87171;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.insightText {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    margin-top: 2px;
+}
+
+.highlightText {
+    color: var(--color-accent);
+}
+
+.highlightTextRed {
+    color: #f87171;
+}
+
+.muscleCard {
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.muscleOverlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at right, rgba(56, 189, 248, 0.07), transparent 70%);
+    pointer-events: none;
+}
+
+.muscleContent {
+    position: relative;
+    z-index: 2;
+}
+
+.muscleTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 6px;
+}
+
+.muscleText {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.muscleButton {
+    width: 100%;
+    background-color: var(--color-accent);
+    color: #070a0e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.muscleButton:hover {
+    opacity: 0.9;
+}

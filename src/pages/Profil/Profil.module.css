@@ -1,0 +1,209 @@
+/* src/pages/Profil/Profil.module.css */
+.scrollContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    padding-bottom: 100px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollContent::-webkit-scrollbar {
+    display: none;
+}
+
+/* KARTA Z PROFILOWYMI INFORMACJAMI */
+.profileCard {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.avatarContainer {
+    position: relative;
+}
+
+.avatarWrapper {
+    position: relative;
+    width: 84px;
+    height: 84px;
+}
+
+.avatarPlaceholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    /* Tymczasowy gradient imitujący zdjęcie profilowe z makiety */
+    /*background: linear-gradient(45deg, #0f172a, #1e293b);
+    background-image: radial-gradient(circle at center, #334155 0%, #0f172a 100%);
+
+     */
+}
+
+.editAvatarBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background-color: var(--color-accent);
+    border: 2px solid var(--color-card-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: -0.3px;
+}
+
+.userMeta {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.highlightText {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* SEKCJE */
+.section {
+    margin-bottom: 24px;
+}
+
+.sectionTitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    margin-left: 4px;
+    margin-bottom: 10px;
+}
+
+.optionsGroup {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* INDYWIDUALNE ELEMENTY LISTY */
+.optionItem, .optionItemStatic {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.optionItem:last-child, .optionItemStatic:last-child {
+    border-bottom: none;
+}
+
+.optionItem {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.optionItem:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.optionLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.optionRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.optionIconBlue {
+    flex-shrink: 0;
+}
+
+.optionIconMuted {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.optionLabel {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.optionValue {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+}
+
+.settingText {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    font-weight: 400;
+}
+
+.settingValueInline {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.badgeActive {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.5px;
+}
+
+/* PRZYCISK WYLOGOWANIA */
+.logoutButton {
+    width: 100%;
+    background-color: rgba(248, 113, 113, 0.05);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    color: #f87171;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 8px;
+}
+
+.logoutButton:hover {
+    background-color: rgba(248, 113, 113, 0.1);
+}

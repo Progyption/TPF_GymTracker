@@ -1,0 +1,311 @@
+/* src/pages/Treningi/Treningi.module.css */
+.scrollContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    padding-bottom: 90px;
+
+    /* Ukrycie paska przewijania */
+    scrollbar-width: none;            /* Firefox */
+    -ms-overflow-style: none;         /* IE i Edge */
+}
+
+/* Ukrycie paska przewijania dla Chrome, Safari i Opera */
+.scrollContent::-webkit-scrollbar {
+    display: none;
+}
+.section {
+    margin-bottom: 24px;
+}
+
+.sectionHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.textLink {
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tabHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.mainTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.filterGroup {
+    display: flex;
+    gap: 8px;
+}
+
+.filterButton {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.bannerCard {
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.bannerOverlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at right, rgba(184, 242, 63, 0.08), transparent 60%);
+    pointer-events: none;
+}
+
+.bannerContent {
+    position: relative;
+    z-index: 2;
+}
+
+.bannerTag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.bannerTitle {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.bannerPlusButton {
+    position: relative;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #070a0e;
+    cursor: pointer;
+}
+
+.sectionSubLabel {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.planCard {
+    background-color: var(--color-card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+}
+
+.planHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.planTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 4px;
+}
+
+.planSubtitle {
+    font-size: 0.9rem;
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+.bookmarkButton {
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    cursor: pointer;
+}
+
+.planFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.intensityArea {
+    flex: 1;
+}
+
+.intensityLabel {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.progressTrack {
+    height: 6px;
+    background-color: #1e293b;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: #38bdf8;
+    border-radius: 3px;
+}
+
+.startButton {
+    background-color: var(--color-accent);
+    color: #070a0e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.historyList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.historyCard {
+    background-color: var(--color-card-bg);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-border);
+}
+
+.historyLeft {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.historyIconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.historyTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 2px;
+}
+
+.historyTime {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.historyRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.metricBlock {
+    text-align: right;
+}
+
+.metricValue {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.metricLabel {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
+}
+
+.brawoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 10px;
+}
+
+.trophyIconContainer {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #0b1e2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.brawoTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 6px;
+}
+
+.brawoText {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    max-width: 280px;
+}
