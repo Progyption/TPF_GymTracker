@@ -1,56 +1,73 @@
-# TPF
+# GymTrack — TPF Projekt 2
 
-## Team
+Mobilna aplikacja webowa w React + Vite przygotowana na podstawie prototypów GymTrack. Projekt odwzorowuje cztery główne ekrany z makiety mobilnej:
 
-| Developer | Branch  |
-|-----------|---------|
-| Kamil     | `Kamil` |
-| Jakub     | `Jakub` |
-| Mykola    | `Mykola` |
+- Dashboard
+- Treningi
+- Analiza / Statystyki
+- Profil / Ustawienia
 
-## Getting Started
+Dodatkowo dodano ekran logowania, chronione trasy oraz fallback 404, zgodnie z checklistą projektową.
 
-### Prerequisites
+## Uruchomienie
 
-- [Node.js](https://nodejs.org/) v18 or higher
-- npm v9 or higher
-
-### Available Scripts
-
-| Command          | Description                        |
-|------------------|------------------------------------|
-| `npm run dev`    | Start the development server       |
-| `npm run build`  | Build the app for production       |
-| `npm run preview`| Preview the production build locally|
-
-## Project Structure
-
-```
-TPF/
-├── public/             # Static assets served as-is
-├── src/
-│   ├── api/            # API call functions (fetch, axios wrappers, etc.)
-│   ├── assets/         # Images, fonts, SVGs used inside components
-│   ├── components/     # Shared/reusable UI components
-│   ├── context/        # React Context providers (global state)
-│   ├── hooks/          # Custom React hooks
-│   ├── pages/          # Page-level components, one folder per route
-│   │   └── Home/
-│   │       ├── Home.jsx
-│   │       └── Home.module.css
-│   ├── styles/
-│   │   └── global.css  # Global CSS reset and base styles
-│   ├── utils/          # Pure helper / utility functions
-│   ├── App.jsx         # Root component with route definitions
-│   └── main.jsx        # Application entry point
-├── index.html          # HTML entry point
-├── vite.config.js      # Vite configuration
-└── package.json
+```bash
+npm install
+npm run dev
 ```
 
-## Conventions
+## Routing
 
-- One folder per page inside `src/pages/` (e.g. `src/pages/About/About.jsx`)
-- Use **CSS Modules** (`*.module.css`) for component-scoped styles
-- Shared components go in `src/components/`
-- Keep business logic out of components — use `src/utils/` or `src/hooks/`
+- `/login`
+- `/dashboard`
+- `/treningi`
+- `/analiza`
+- `/profil`
+- `*` → 404
+
+## Logowanie
+
+Aplikacja obsługuje dwa tryby logowania:
+
+1. **Firebase Authentication** — po dodaniu zmiennych środowiskowych.
+2. **Tryb demo** — działa od razu bez konfiguracji.
+
+Dane demo:
+
+- email: `demo@gymtrack.pl`
+- hasło: `demo1234`
+
+### Konfiguracja Firebase
+
+Utwórz plik `.env` i dodaj:
+
+```env
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_APP_ID=...
+```
+
+## Hotjar i Google Analytics
+
+W projekcie są przygotowane integracje aktywowane przez zmienne środowiskowe:
+
+```env
+VITE_HOTJAR_ID=123456
+VITE_HOTJAR_VERSION=6
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+Bez tych wartości aplikacja działa normalnie, ale analityka nie jest inicjalizowana.
+
+## Struktura
+
+- `src/pages` — główne widoki routingu
+- `src/components` — reużywalne komponenty UI
+- `src/context` — kontekst autoryzacji
+- `src/services` — integracja Firebase
+- `src/styles` — style globalne
+
+## Uwagi
+
+Projekt jest stylowany tak, aby zachować charakter dostarczonych widoków mobilnych: ciemne tło, akcenty w kolorach meadow green / blue, dolna nawigacja i karty danych.

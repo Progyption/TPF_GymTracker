@@ -1,0 +1,90 @@
+.profileCard {
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(181, 228, 140, 0.1);
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.name {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.1rem;
+}
+
+.level {
+  margin-top: 6px;
+  color: var(--accent);
+}
+
+.editButton {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #04131c;
+}
+
+.sectionTitle {
+  margin: 18px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+}
+
+.stack {
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+}
+
+.row + .row {
+  border-top: 1px solid rgba(24, 78, 119, 0.5);
+}
+
+.rowIcon {
+  color: var(--secondary);
+}
+
+.rowLabel {
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.rowValue {
+  color: var(--text-primary);
+}
+
+.arrow {
+  color: var(--text-muted);
+}
+
+.logoutButton {
+  width: 100%;
+  height: 48px;
+  border-radius: 16px;
+  border: 1px solid rgba(24, 78, 119, 0.85);
+  background: transparent;
+  color: #ffb4ab;
+  font-weight: 700;
+}

@@ -1,0 +1,26 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #020b14 0%, #02131f 100%);
+  color: var(--text-primary);
+  padding: 24px;
+}
+
+.box {
+  max-width: 360px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.code {
+  font-size: 4rem;
+  font-family: 'Lexend', sans-serif;
+  color: var(--accent);
+}
+
+.box a {
+  color: var(--secondary);
+}

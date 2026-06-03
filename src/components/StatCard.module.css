@@ -1,0 +1,23 @@
+.card {
+  min-height: 112px;
+}
+
+.icon {
+  color: var(--secondary);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.value {
+  font-family: 'Lexend', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.label {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  line-height: 1.05;
+}
