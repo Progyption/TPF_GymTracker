@@ -146,50 +146,61 @@ function ProfilePage() {
   const handleSave = () => {
     const errors = {}
 
-    if (
-      modalType === 'profile'
-    ) {
+    if (modalType === 'profile') {
       if (!formValues.name?.trim())
-        errors.name = true
+        errors.name = 'Podaj imię'
 
       if (!formValues.level)
-        errors.level = true
+        errors.level = 'Wybierz poziom'
     }
 
-    if (
-      modalType === 'email'
-    ) {
-      if (
-        !formValues.email?.trim()
-      )
-        errors.email = true
+    if (modalType === 'email') {
+      const email = formValues.email?.trim()
+
+      if (!email) {
+        errors.email = 'Pole email jest wymagane.'
+      } else if (
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+      ) {
+        errors.email =
+            'Wprowadź poprawny adres email.'
+      }
     }
 
-    if (
-      modalType === 'height'
-    ) {
-      if (
-        !formValues.height?.trim()
-      )
-        errors.height = true
+    if (modalType === 'height') {
+      const height = Number(formValues.height)
+
+      if (!formValues.height?.trim()) {
+        errors.height =
+            'Podaj swój wzrost.'
+      } else if (
+          Number.isNaN(height) ||
+          height < 100 ||
+          height > 250
+      ) {
+        errors.height =
+            'Wzrost musi mieścić się w zakresie 100-250 cm.'
+      }
     }
 
-    if (
-      modalType === 'weight'
-    ) {
-      if (
-        !formValues.weight?.trim()
-      )
-        errors.weight = true
+    if (modalType === 'weight') {
+      const weight = Number(formValues.weight)
+
+      if (!formValues.weight?.trim()) {
+        errors.weight =
+            'Podaj swoją wagę.'
+      } else if (
+          Number.isNaN(weight) ||
+          weight < 30 ||
+          weight > 300
+      ) {
+        errors.weight =
+            'Waga musi mieścić się w zakresie 30-300 kg.'
+      }
     }
 
-    if (
-      Object.keys(errors)
-        .length > 0
-    ) {
-      setValidationErrors(
-        errors,
-      )
+    if (Object.keys(errors).length > 0) {
+      setValidationErrors(errors)
       return
     }
 
@@ -421,6 +432,7 @@ function ProfilePage() {
             ? [
                 {
                   key: 'email',
+                  type: 'email',
                   placeholder:
                     'Nowy email',
                 },
@@ -430,6 +442,7 @@ function ProfilePage() {
             ? [
                 {
                   key: 'height',
+                  type: 'number',
                   placeholder:
                     'Nowy wzrost',
                 },
@@ -437,6 +450,7 @@ function ProfilePage() {
             : [
                 {
                   key: 'weight',
+                  type: 'number',
                   placeholder:
                     'Nowa waga',
                 },

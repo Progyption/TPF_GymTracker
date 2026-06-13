@@ -133,6 +133,13 @@ select.input:focus option:checked {
   color: #ff4d6d;
 }
 
+.errorMessage {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
 .actions {
   display: flex;
   gap: 12px;
