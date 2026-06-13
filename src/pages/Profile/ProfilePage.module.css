@@ -20,6 +20,7 @@
 .name {
   font-family: 'Lexend', sans-serif;
   font-size: 1.1rem;
+  margin: 0;
 }
 
 .level {
@@ -28,12 +29,14 @@
 }
 
 .editButton {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
   background: var(--accent);
   color: #04131c;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .sectionTitle {
@@ -50,6 +53,15 @@
   margin-bottom: 14px;
 }
 
+.rowButton {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
 .row {
   display: grid;
   grid-template-columns: 30px 1fr auto;
@@ -58,33 +70,38 @@
   padding: 16px;
 }
 
-.row + .row {
+.rowButton + .rowButton {
   border-top: 1px solid rgba(24, 78, 119, 0.5);
 }
 
 .rowIcon {
   color: var(--secondary);
+  font-size: 18px;
 }
 
 .rowLabel {
   color: var(--text-secondary);
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 .rowValue {
   color: var(--text-primary);
+  margin: 0;
 }
 
 .arrow {
   color: var(--text-muted);
+  font-size: 22px;
 }
 
 .logoutButton {
   width: 100%;
-  height: 48px;
+  height: 52px;
   border-radius: 16px;
   border: 1px solid rgba(24, 78, 119, 0.85);
   background: transparent;
   color: #ffb4ab;
   font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
 }

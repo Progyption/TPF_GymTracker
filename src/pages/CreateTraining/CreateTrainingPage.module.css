@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 16px;
+  padding-bottom: 120px;
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid #2f2f2f;
+  background: #1b1b1b;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.errorInput {
+  border: 1px solid #ff4d6d;
+}
+
+.errorInput::placeholder {
+  color: #ff4d6d;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #d63384;
+}
+
+.addExerciseButton {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 18px;
+  background: #242424;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.cancelButton {
+  flex: 1;
+  height: 60px;
+  border: none;
+  border-radius: 18px;
+  background: #a61e2d;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveButton {
+  flex: 1;
+  height: 60px;
+  border: none;
+  border-radius: 18px;
+  background: #d63384;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancelButton:hover,
+.saveButton:hover,
+.addExerciseButton:hover {
+  transform: scale(1.01);
+}
+
+/* DATE INPUT PLACEHOLDER LOOK */
+
+input[type='date'] {
+  position: relative;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+input[type='date']:valid {
+  color: white;
+}
+
+input[type='date']::before {
+  content: 'Date';
+  position: absolute;
+  left: 16px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+input[type='date']:focus::before,
+input[type='date']:valid::before {
+  display: none;
+}
+
+.errorInput[type='date'] {
+  border-color: #ff4d6d;
+}
+
+.errorInput[type='date']::before {
+  color: #ff4d6d;
+}

@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFound/NotFoundPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import AnalyticsListener from './components/AnalyticsListener'
 import HotjarInit from './components/HotjarInit'
+import CreateTrainingPage from './pages/CreateTraining/CreateTrainingPage'
 
 function App() {
   return (
@@ -30,6 +31,14 @@ function App() {
           element={
             <ProtectedRoute>
               <TrainingsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/treningi/new"
+          element={
+            <ProtectedRoute>
+            <CreateTrainingPage />
             </ProtectedRoute>
           }
         />
