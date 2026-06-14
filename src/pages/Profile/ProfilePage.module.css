@@ -63,8 +63,9 @@
 }
 
 .row {
+  min-width: 0;
   display: grid;
-  grid-template-columns: 30px 1fr auto;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
   gap: 12px;
   align-items: center;
   padding: 16px;
@@ -87,6 +88,9 @@
 .rowValue {
   color: var(--text-primary);
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .arrow {

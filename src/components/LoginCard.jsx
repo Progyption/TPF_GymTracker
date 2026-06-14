@@ -12,7 +12,7 @@ function LoginCard({ email, password, error, loading, onChange, onSubmit, onGoog
                     <h1 className={styles.title}>Zaloguj się</h1>
                 </div>
             </div>
-            <p className={styles.help}>Użyj konta Firebase albo demo: demo@gymtrack.pl / demo1234</p>
+            <p className={styles.help}>Zaloguj się za pomocą konta Google lub demo</p>
             <form className={styles.form} onSubmit={onSubmit}>
                 <label className={styles.label}>
                     Email
