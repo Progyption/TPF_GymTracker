@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <HotjarInit />
+        {/* <HotjarInit /> */}
       <AnalyticsListener />
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
