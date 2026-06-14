@@ -7,7 +7,7 @@ import styles from './LoginPage.module.css'
 function LoginPage() {
   const navigate = useNavigate()
   const location = useLocation()
-  const { login, authError, loading } = useAuth()
+  const { login, loginWithGoogle, authError, loading } = useAuth()
   const [form, setForm] = useState({
     email: 'demo@gymtrack.pl',
     password: 'demo1234',
@@ -26,6 +26,15 @@ function LoginPage() {
     }
   }
 
+  const handleGoogleSubmit = async () => {
+    console.log('kliknięto Google')
+    const result = await loginWithGoogle()
+    console.log('wynik:', result)
+    if (result.ok) {
+      navigate(location.state?.from || '/dashboard', { replace: true })
+    }
+  }
+
   return (
     <div className={styles.page}>
       <div className={styles.phone}>
@@ -36,6 +45,7 @@ function LoginPage() {
           loading={loading}
           onChange={handleChange}
           onSubmit={handleSubmit}
+          onGoogleSubmit={handleGoogleSubmit}
         />
       </div>
     </div>

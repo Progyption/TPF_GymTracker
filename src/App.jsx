@@ -9,8 +9,17 @@ import ProtectedRoute from './components/ProtectedRoute'
 import AnalyticsListener from './components/AnalyticsListener'
 import HotjarInit from './components/HotjarInit'
 import CreateTrainingPage from './pages/CreateTraining/CreateTrainingPage'
+import {useEffect} from "react";
+import ReactGA from 'react-ga4'
 
 function App() {
+    useEffect(() => {
+        const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID
+        if (measurementId) {
+            ReactGA.initialize(measurementId)
+        }
+    }, [])
+
   return (
     <>
       <HotjarInit />

@@ -1,15 +1,14 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import ReactGA from "react-ga4";
 
 function AnalyticsListener() {
   const location = useLocation()
 
   useEffect(() => {
-    const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID
-    if (!measurementId || !window.gtag) return
-
-    window.gtag('config', measurementId, {
-      page_path: location.pathname + location.search,
+    ReactGA.send({
+      hitType: 'pageview',
+      page: location.pathname + location.search,
     })
   }, [location])
 

@@ -33,7 +33,24 @@ export async function signInWithEmailAndPassword(email, password) {
   return credentials.user
 }
 
+export async function signInWithGoogle() {
+  const { getAuth, signInWithPopup, GoogleAuthProvider } = await import('firebase/auth')
+  const { initializeApp, getApps } = await import('firebase/app')
+
+  const apiKey = import.meta.env.VITE_FIREBASE_API_KEY
+  const authDomain = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN
+  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID
+  const appId = import.meta.env.VITE_FIREBASE_APP_ID
+
+  const app = getApps().length ? getApps()[0] : initializeApp({ apiKey, authDomain, projectId, appId })
+  const auth = getAuth(app)
+  const provider = new GoogleAuthProvider()
+
+  const credentials = await signInWithPopup(auth, provider)
+  return credentials.user
+}
 export async function signOut() {
   const { auth, firebaseSignOut } = await getFirebaseAuth()
   await firebaseSignOut(auth)
 }
+

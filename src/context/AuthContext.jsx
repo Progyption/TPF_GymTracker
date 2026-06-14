@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { signInWithEmailAndPassword, signOut } from '../services/firebase'
+import { signInWithEmailAndPassword, signOut, signInWithGoogle } from '../services/firebase'
+
 
 const AuthContext = createContext(null)
 
@@ -49,6 +50,40 @@ export function AuthProvider({ children }) {
     }
   }
 
+  const loginWithGoogle = async () => {
+    setLoading(true)
+    setAuthError('')
+    try {
+      const firebaseUser = await signInWithGoogle()
+      setUser({
+        name: firebaseUser.displayName || 'Użytkownik Google',
+        email: firebaseUser.email,
+      })
+      return { ok: true }
+    } catch (error) {
+      const messages = {
+        'auth/user-cancelled': 'Anulowano logowanie przez Google.',
+        'auth/popup-closed-by-user': 'Okno logowania zostało zamknięte.',
+        'auth/popup-blocked': 'Przeglądarka zablokowała okno logowania. Zezwól na pop-upy.',
+        'auth/network-request-failed': 'Brak połączenia z internetem.',
+        'auth/cancelled-popup-request': null, // cicha — user kliknął dwa razy, ignorujemy
+      }
+
+      const code = error.code
+      const message = messages[code]
+
+      if (message !== undefined) {
+        if (message !== null) setAuthError(message)
+      } else {
+        setAuthError('Nie udało się zalogować przez Google.')
+      }
+
+      return { ok: false }
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const logout = async () => {
     try {
       await signOut()
@@ -59,7 +94,7 @@ export function AuthProvider({ children }) {
   }
 
   const value = useMemo(
-    () => ({ user, loading, authError, login, logout }),
+    () => ({ user, loading, authError, login, logout, loginWithGoogle }),
     [user, loading, authError],
   )
 
